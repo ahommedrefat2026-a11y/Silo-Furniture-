@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-charcoal: #2C2C2C;
+  --color-charcoal-light: #3D3D3D;
+  --color-charcoal-dark: #1A1A1A;
+  --color-oak: #B8956A;
+  --color-oak-light: #D4B896;
+  --color-oak-dark: #8B6F47;
+  --color-offwhite: #FAF8F5;
+  --color-cream: #F5F0EA;
+  --color-gold: #C9A84C;
+  --color-gold-light: #E0C976;
+  --color-gold-dark: #A68A3E;
+  --color-warm-gray: #9B9590;
+  --color-warm-gray-light: #C4BFBA;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-charcoal);
+    background-color: var(--color-offwhite);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-charcoal text-offwhite font-sans font-medium text-sm tracking-widest uppercase transition-all duration-300 hover:bg-charcoal-light;
+  }
+
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-gold text-charcoal-dark font-sans font-medium text-sm tracking-widest uppercase transition-all duration-300 hover:bg-gold-light;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 border border-charcoal text-charcoal font-sans font-medium text-sm tracking-widest uppercase transition-all duration-300 hover:bg-charcoal hover:text-offwhite;
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-20 xl:px-32;
+  }
+
+  .gold-divider {
+    @apply w-16 h-[2px] bg-gold mx-auto;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-offwhite border border-warm-gray-light text-charcoal font-sans text-sm transition-all duration-200 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold placeholder:text-warm-gray;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-offwhite);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-gray-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-warm-gray);
+}
